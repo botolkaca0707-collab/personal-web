@@ -1,0 +1,259 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0E0720;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+img {
+  user-select: none;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* =========================
+   CSS SCROLL ANIMATION (NO JS)
+========================= */
+
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 20px 25px;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+/* MENU DEFAULT (DESKTOP) */
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* LINK */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  background: #1e90ff;
+  transform: translateY(-3px);
+}
+
+.lets-talk {
+  background: #1e90ff;
+}
+
+.lets-talk:hover {
+  background: #0077ff;
+}
+
+/* HAMBURGER */
+#menu-toggle {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ===========================
+   RESPONSIVE MENU (HP)
+=========================== */
+
+@media (max-width: 768px) {
+
+  /* Tampilkan hamburger di kanan */
+  .menu-toggle-label {
+    display: block;
+  }
+
+  /* Sembunyikan menu saat belum diklik */
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    flex-direction: column;
+    width: 180px;
+    padding: 20px 0;
+    border-radius: 12px;
+    gap: 15px;
+    display: none;  /* <= SANGAT PENTING */
+  }
+
+  /* Jika checkbox dicentang → tampilkan menu */
+  #menu-toggle:checked + .menu-toggle-label + .nav-menu {
+    display: flex;
+  }
+
+  /* Sesuaikan padding */
+  .nav-link {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+
+/* SECTION */
+.aboutme-section {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.about-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-left: 8%;
+}
+
+.about-title span {
+  color: #1e90ff;
+}
+
+.about-container {
+  display: flex;
+  gap: 50px;
+  margin-top: 40px;
+  padding: 0 8%;
+}
+
+/* MENU LEFT */
+.about-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.menu-item {
+  padding: 12px 25px;
+  background: #1f1a33;
+  color: #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s ease;
+  font-weight: 500;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background: #1e90ff;
+  color: white;
+}
+
+/* CONTENT RIGHT */
+.about-content {
+  flex: 1;
+}
+
+.content-box.hidden {
+  display: none;
+}
+
+/* SKILL GRID */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.skill-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #1b1630;
+  padding: 14px 18px;
+  border-radius: 12px;
+  transition: .3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(30,144,255,0.25);
+}
+
+.skill-icon {
+  width: 48px;
+}
+
+.skill-info h3 {
+  font-size: 1rem;
+}
+
+.skill-info p {
+  font-size: .85rem;
+  color: #aaa;
+}
+
+/* EXPERIENCE & EDUCATION BOXES */
+.exp-box,
+.edu-box {
+  background: #1b1630;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: .3s ease;
+}
+
+.exp-box:hover,
+.edu-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(30,144,255,0.25);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  color: #9ca3af;
+  margin-top: 15rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .about-container {
+    flex-direction: column;
+  }
+}

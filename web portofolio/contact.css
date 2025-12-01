@@ -1,0 +1,288 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0E0720;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+img {
+  user-select: none;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 20px 25px;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+/* MENU DEFAULT (DESKTOP) */
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* LINK */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  background: #1e90ff;
+  transform: translateY(-3px);
+}
+
+.lets-talk {
+  background: #1e90ff;
+}
+
+.lets-talk:hover {
+  background: #0077ff;
+}
+
+/* HAMBURGER */
+#menu-toggle {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ===========================
+   RESPONSIVE MENU (HP)
+=========================== */
+
+@media (max-width: 768px) {
+
+  /* Tampilkan hamburger di kanan */
+  .menu-toggle-label {
+    display: block;
+  }
+
+  /* Sembunyikan menu saat belum diklik */
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    flex-direction: column;
+    width: 180px;
+    padding: 20px 0;
+    border-radius: 12px;
+    gap: 15px;
+    display: none;  /* <= SANGAT PENTING */
+  }
+
+  /* Jika checkbox dicentang → tampilkan menu */
+  #menu-toggle:checked + .menu-toggle-label + .nav-menu {
+    display: flex;
+  }
+
+  /* Sesuaikan padding */
+  .nav-link {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+  padding-top: 160px;
+  padding-bottom: 120px;
+}
+
+.contact-container {
+  width: 85%;
+  margin: auto;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-title span {
+  color: #1e90ff;
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: #b3b3b3;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+}
+
+/* LIST KONTAK */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+}
+
+.contact-link, .contact-text {
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* KOTAK PUTIH KANAN */
+.big-box {
+  width: 420px;
+  height: 420px;
+  background: white;
+  border-radius: 4px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN (HP)
+========================= */
+
+@media (max-width: 768px) {
+  
+  /* Mengatur jarak dari navbar */
+  .contact-section {
+    padding-top: 130px;
+    padding-bottom: 80px;
+  }
+
+  /* Judul lebih kecil */
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Susunan kontak vertikal */
+  .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  /* List kontak ditengah agar rapi */
+  .contact-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  /* Gunakan grid untuk memastikan ikon tidak bergerak */
+  .contact-item {
+    width: 260px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    justify-self: center;
+  }
+
+  .contact-link, .contact-text {
+    text-align: left;
+    font-size: 1rem;
+    word-break: break-word;
+  }
+}
+
+/* Responsive ukuran sangat kecil (<480px) */
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1.7rem;
+  }
+
+  .contact-subtitle {
+    text-align: center;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .big-box {
+    height: 260px;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: #9ca3af;
+}
